@@ -29,15 +29,18 @@ function BottomBar() {
       sx={{
         position: 'fixed',
         bottom: 0,
-        left: 0,
-        right: 0,
+        /* 컨테이너(max-width 480px)와 동일하게 중앙 정렬 */
+        left: '50%',
+        transform: 'translateX(-50%)',
+        width: '100%',
+        maxWidth: 480,
         zIndex: 1100,
         bgcolor: 'rgba(255,255,255,0.95)',
         backdropFilter: 'blur(20px)',
         borderTop: '1px solid #e5e5ea',
       }}
     >
-      <Box sx={{ position: 'relative', maxWidth: 480, mx: 'auto' }}>
+      <Box sx={{ position: 'relative' }}>
         <BottomNavigation value={getValue()} showLabels sx={{ bgcolor: 'transparent', height: 64 }}>
           <BottomNavigationAction
             label="홈"

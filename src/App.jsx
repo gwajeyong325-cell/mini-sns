@@ -1,6 +1,7 @@
 import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
 import theme from './theme';
 import { AuthProvider, useAuth } from './AuthContext';
 import LoginPage from './pages/LoginPage/LoginPage';
@@ -45,7 +46,19 @@ function App() {
       <CssBaseline />
       <AuthProvider>
         <HashRouter>
-          <AppRoutes />
+          {/* 모바일 앱 컨테이너: 모바일은 full-width, 데스크톱은 480px 중앙 정렬 */}
+          <Box
+            sx={{
+              maxWidth: 480,
+              mx: 'auto',
+              minHeight: '100vh',
+              bgcolor: 'background.default',
+              position: 'relative',
+              boxShadow: { xs: 'none', sm: '0 0 40px rgba(0,0,0,0.12)' },
+            }}
+          >
+            <AppRoutes />
+          </Box>
         </HashRouter>
       </AuthProvider>
     </ThemeProvider>
