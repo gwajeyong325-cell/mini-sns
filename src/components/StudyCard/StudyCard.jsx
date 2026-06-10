@@ -47,7 +47,7 @@ function StudyCard({ post }) {
           <Chip
             label={post.category}
             size="small"
-            sx={{ bgcolor: categoryColor, color: '#ffffff', fontWeight: 700, fontSize: '0.7rem' }}
+            sx={{ bgcolor: '#ffffff', color: categoryColor, fontWeight: 700, fontSize: '0.7rem' }}
           />
         </Box>
         <IconButton
