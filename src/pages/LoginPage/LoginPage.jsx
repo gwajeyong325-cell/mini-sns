@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Box, Button, Chip, Divider, IconButton, InputAdornment, TextField, Typography, Alert, CircularProgress } from '@mui/material';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
@@ -18,8 +18,13 @@ function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const { signIn, signUp, updateProfile } = useAuth();
+  const { signIn, signUp, updateProfile, user } = useAuth();
   const navigate = useNavigate();
+
+  // user 상태가 실제로 세팅된 후에 navigate (비동기 state 업데이트 대응)
+  useEffect(() => {
+    if (user) navigate('/');
+  }, [user, navigate]);
 
   const handleLogin = async () => {
     if (!email || !password) { setError('이메일과 비밀번호를 입력해 주세요.'); return; }
@@ -27,7 +32,7 @@ function LoginPage() {
     setError('');
     await signIn(email, password);
     setLoading(false);
-    navigate('/');
+    // navigate는 useEffect의 user 감지로 처리
   };
 
   const handleSignUp = async () => {
@@ -46,7 +51,7 @@ function LoginPage() {
       await updateProfile({ interests: selectedInterests });
     }
     setLoading(false);
-    navigate('/');
+    // navigate는 useEffect의 user 감지로 처리
   };
 
   const toggleInterest = (interest) => {
