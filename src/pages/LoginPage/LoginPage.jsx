@@ -25,10 +25,9 @@ function LoginPage() {
     if (!email || !password) { setError('이메일과 비밀번호를 입력해 주세요.'); return; }
     setLoading(true);
     setError('');
-    const { error } = await signIn(email, password);
+    await signIn(email, password);
     setLoading(false);
-    if (error) { setError(error.message === 'Invalid login credentials' ? '이메일 또는 비밀번호가 올바르지 않습니다.' : error.message); }
-    else navigate('/');
+    navigate('/');
   };
 
   const handleSignUp = async () => {
