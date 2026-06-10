@@ -45,7 +45,14 @@ function PostCard({ post }) {
   return (
     <Card onClick={() => navigate(`/post/${post.id}`)} sx={{ cursor: 'pointer', mb: 1.5 }}>
       {post.image_url && (
-        <CardMedia component="img" height={200} image={imageUrl} alt={post.title} sx={{ objectFit: 'cover' }} />
+        <CardMedia
+          component="img"
+          height={200}
+          image={imageUrl}
+          alt={post.title}
+          sx={{ objectFit: 'cover' }}
+          onError={(e) => { e.target.src = `https://picsum.photos/seed/${post.id}post/400/300`; }}
+        />
       )}
       <CardContent sx={{ p: 2, pb: '12px !important' }}>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 1 }}>

@@ -37,7 +37,14 @@ function StudyCard({ post }) {
       sx={{ cursor: 'pointer', mb: 2, overflow: 'hidden', '&:hover': { transform: 'translateY(-2px)', transition: '0.2s' } }}
     >
       <Box sx={{ position: 'relative' }}>
-        <CardMedia component="img" height={160} image={imageUrl} alt={post.title} sx={{ objectFit: 'cover' }} />
+        <CardMedia
+          component="img"
+          height={160}
+          image={imageUrl}
+          alt={post.title}
+          sx={{ objectFit: 'cover' }}
+          onError={(e) => { e.target.src = `https://picsum.photos/seed/${post.id}card/400/200`; }}
+        />
         <Box sx={{ position: 'absolute', top: 12, left: 12, display: 'flex', gap: 1 }}>
           <Chip
             label={status.label}

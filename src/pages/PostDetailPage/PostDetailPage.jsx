@@ -30,7 +30,7 @@ const MOCK_POST = {
   requirements: '디자인 전공자', goals: '포트폴리오 완성 및 취업 준비',
   status: 'open', likes_count: 24,
   caption: '취업 준비생 대상 포트폴리오 스터디입니다.\n\n매주 1회 온라인 피드백 진행\n월 1회 오프라인 발표\n\n실무 중심 프로젝트 리뷰를 목표로 합니다.',
-  image_url: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800',
+  image_url: 'https://picsum.photos/seed/uiux-study/400/220',
   created_at: new Date(Date.now() - 86400000).toISOString(),
   users: { display_name: '디자인멘토', avatar_url: '', bio: 'UX 디자이너 3년차' },
 };

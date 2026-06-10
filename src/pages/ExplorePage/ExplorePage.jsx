@@ -15,9 +15,9 @@ const CATEGORIES = [
 ];
 
 const MOCK_STUDIES = [
-  { id: 's1', title: 'Figma 마스터 클래스 스터디', category: 'UIUX', tags: ['#피그마', '#UI디자인'], post_type: 'study', study_mode: 'online', location: '온라인', max_members: 8, current_members: 4, deadline: '2026-07-10', status: 'open', likes_count: 22, image_url: 'https://images.unsplash.com/photo-1587440871875-191322ee64b0?w=800' },
-  { id: 's2', title: '로고 디자인 A to Z', category: '브랜딩', tags: ['#로고', '#브랜딩'], post_type: 'study', study_mode: 'online', location: '온라인', max_members: 6, current_members: 2, deadline: '2026-07-20', status: 'open', likes_count: 15, image_url: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800' },
-  { id: 's3', title: '콘텐츠 마케팅 실전반', category: '마케팅', tags: ['#콘텐츠', '#인스타'], post_type: 'study', study_mode: 'offline', location: '서울', max_members: 5, current_members: 3, deadline: '2026-06-25', status: 'closing', likes_count: 38, image_url: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800' },
+  { id: 's1', title: 'Figma 마스터 클래스 스터디', category: 'UIUX', tags: ['#피그마', '#UI디자인'], post_type: 'study', study_mode: 'online', location: '온라인', max_members: 8, current_members: 4, deadline: '2026-07-10', status: 'open', likes_count: 22, image_url: 'https://picsum.photos/seed/figma-class/400/200' },
+  { id: 's2', title: '로고 디자인 A to Z', category: '브랜딩', tags: ['#로고', '#브랜딩'], post_type: 'study', study_mode: 'online', location: '온라인', max_members: 6, current_members: 2, deadline: '2026-07-20', status: 'open', likes_count: 15, image_url: 'https://picsum.photos/seed/logo-design/400/200' },
+  { id: 's3', title: '콘텐츠 마케팅 실전반', category: '마케팅', tags: ['#콘텐츠', '#인스타'], post_type: 'study', study_mode: 'offline', location: '서울', max_members: 5, current_members: 3, deadline: '2026-06-25', status: 'closing', likes_count: 38, image_url: 'https://picsum.photos/seed/content-mkt/400/200' },
 ];
 
 function ExplorePage() {
